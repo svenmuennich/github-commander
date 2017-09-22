@@ -1,0 +1,34 @@
+orgName: FistFist
+teams:
+  - name: Newbies
+    defaultPermission: NONE
+  - name: Sales
+    defaultPermission: READ
+  - name: Devs
+    defaultPermission: WRITE
+  - name: Admins
+    defaultPermission: ADMIN
+issueLabels:
+  - name: bug
+    color: ee0701
+  - name: duplicate
+    color: cccccc
+  - name: enhancement
+    color: 84b6eb
+  - name: good first issue
+    color: 7057ff
+  - name: help wanted
+    color: 33aa3f
+  - name: invalid
+    color: e6e6e6
+  - name: question
+    color: cc317c
+  - name: wontfix
+    color: ffffff
+repositories:
+  - name: upgraded-sniffle
+    teamPermissions:
+      - teamName: Newbies
+        permission: WRITE
+      - teamName: Sales
+        permission: null

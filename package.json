@@ -1,0 +1,58 @@
+{
+    "name": "github-commander",
+    "version": "0.1.0",
+    "description": "A CLI tool for performing tedious GitHub settings with a keystroke",
+    "keywords": [
+        "GitHub",
+        "repository",
+        "repositories",
+        "team",
+        "teams",
+        "label",
+        "labels",
+        "permission",
+        "permissions",
+        "org",
+        "management"
+    ],
+    "bugs": "https://github.com/svenmuennich/github-commander/issues",
+    "license": "MIT",
+    "author": "Sven Münnich",
+    "main": "./index.js",
+    "bin": {
+        "github-commander": "./index.js",
+        "github-commander-generate-token": "./lib/commands/generateToken.js",
+        "github-commander-issue-labels": "./lib/commands/issueLabels.js",
+        "github-commander-permissions": "./lib/commands/permissions.js"
+    },
+    "directories": {
+        "lib": "./lib"
+    },
+    "repository": "svenmuennich/github-commander",
+    "scripts": {
+        "eslint": "eslint .",
+        "eslint:fix": "eslint --fix .",
+        "start": "node ."
+    },
+    "dependencies": {
+        "chalk": "^2.1.0",
+        "cli-spinner": "^0.2.6",
+        "cli-table": "^0.3.1",
+        "co": "^4.6.0",
+        "co-prompt": "github:svenmuennich/co-prompt",
+        "commander": "^2.11.0",
+        "github": "^11.0.0",
+        "js-yaml": "^3.10.0",
+        "mz": "^2.7.0"
+    },
+    "devDependencies": {
+        "eslint": "^4.7.2",
+        "eslint-config-airbnb-base": "^12.0.0",
+        "eslint-plugin-filenames": "^1.2.0",
+        "eslint-plugin-import": "^2.7.0"
+    },
+    "engines": {
+        "node": "^7.6.0"
+    },
+    "preferGlobal": true
+}
