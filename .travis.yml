@@ -5,3 +5,10 @@ node_js:
 
 script:
   - npm run eslint
+
+deploy:
+  provider: npm
+  api_key: $NPM_AUTH_TOKEN
+  email: $NPM_EMAIL
+  on:
+    tags: true
