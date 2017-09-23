@@ -1,6 +1,6 @@
 # github-commander
 
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE) [![Build Status](https://travis-ci.org/svenmuennich/github-commander.svg?branch=master)](https://travis-ci.org/svenmuennich/github-commander)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE) [![Build Status](https://img.shields.io/travis/svenmuennich/github-commander.svg?style=flat-square)](https://travis-ci.org/svenmuennich/github-commander)
 
 A CLI tool for performing tedious GitHub settings with a keystroke.
 
