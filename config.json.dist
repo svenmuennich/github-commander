@@ -65,6 +65,10 @@
                     "permission": null
                 }
             ]
+        },
+        {
+            "name": "shiny-pancake",
+            "clearCollaborators": false
         }
     ]
 }

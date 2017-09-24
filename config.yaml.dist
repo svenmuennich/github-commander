@@ -32,3 +32,5 @@ repositories:
         permission: WRITE
       - teamName: Sales
         permission: null
+  - name: shiny-pancake
+    clearCollaborators: false

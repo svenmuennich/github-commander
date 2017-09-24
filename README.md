@@ -43,6 +43,8 @@ Reads the `issueLabels` section of your configuration and applies it to all repo
 
 Reads the `teams` and `repositories` sections of your configuration and updates the team permissions of all repositories in the selected organization accordingly. Only permissions of teams defined in the config are changed. That is, the permissions of any teams that are not added to the configuration are not touched. This allows to keep manual control over specific teams.
 
+If the optional `--clear-collaborators` option is passed to the command, all collaborators (single user permissions) of all repositories are removed. This can be prevented per repository by defining them in the configuration and setting the field `clearCollaborators` to `false`.
+
 ## Config format
 
 All commands (except for `generate-token`) work based on a configuration file that must be passed to the command. That file's format can be either `json` or `yaml`. The config structure required by the commands is always the same, although `issue-labels` and `permissions` expect different values to be present. In the following the required structure is explained in detail:
@@ -73,17 +75,23 @@ All commands (except for `generate-token`) work based on a configuration file th
 
     Both fields `name` (case insensitive) and `color` must be set. The color must be a valid, three to six character hex color code and is validated upon loading the config.
 
-* `repositories` – _optional_: An array of repository descriptions. These are used by the `permissions` command to apply custom permission settings for specific repositories. That is, you can set a specific permission for a team on a specific repository. These settings override the team's `defaultPermission` and can both downgrade and upgrade the team's permission on the repository:
+* `repositories` – _optional_: An array of repository descriptions. These are used by the `permissions` command to apply custom permission settings for specific repositories. That is, you can set a specific permission for a team on a specific repository. These settings override the team's `defaultPermission` and can both downgrade and upgrade the team's permission on the repository. Furthermore you can overwrite the `--clear-collaborators` option for single repositories by setting `clearCollaborators` to `false`:
 
     ```yaml
     repository:
-      - name: FistFist/upgraded-sniffle
+      - name: upgraded-sniffle
+        clearCollaborators: false
         teamPermissions:
           - teamName: My team
             permission: READ
     ```
 
-	This config would downgrade the permission of team `My team` for repository `FistFist/upgraded-sniffle` to read only, eventhough the team's `defaultPermission` is `ADMIN`. Please note that the `teamPermissions` **do not** describe exclusive permissions. That is, if you have several teams and define only one of those teams in `teamPermissions`, all other teams still receive their default permissions for that repository.
+    This example config does two things:
+
+    1. Prevent the collaborators of repository `upgraded-sniffle` from being cleared in case the `--clear-collaborators` option is set.
+    2. Downgrade the permission of team `My team` for repository `upgraded-sniffle` to read only, even though the team's `defaultPermission` is `ADMIN`.
+
+    Please note that the `teamPermissions` **do not** describe exclusive permissions. That is, if you have several teams and define only one of those teams in `teamPermissions`, all other teams still receive their default permissions for that repository.
 
 You can find example configurations both as [yaml](config.yaml.dist) and as [json](config.json.dist) in this repository.
 
