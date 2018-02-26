@@ -45,6 +45,21 @@ Reads the `teams` and `repositories` sections of your configuration and updates 
 
 If the optional `--clear-collaborators` option is passed to the command, all collaborators (single user permissions) of all repositories are removed. This can be prevented per repository by defining them in the configuration and setting the field `clearCollaborators` to `false`.
 
+### Add open issues to a project
+
+**Note: This command does not require a configuration file.**
+
+`github-commander add-issues-to-project -o <org_name> -r <repository_name> -p <project_name> -c <column_name>`
+
+Loads all open issues of the specified repository and appends them to the column in the specified project (must be a global project within that organization). The issues are sorted by label before they are appended to the existing cards in that column. The sort order is as follows:
+
+1. "bug" label
+2. No label
+3. "enhancement" label
+4. Any other labels
+
+Issues having the same labels are sorted in ascending order by their number, i.e. oldest first.
+
 ## Config format
 
 All commands (except for `generate-token`) work based on a configuration file that must be passed to the command. That file's format can be either `json` or `yaml`. The config structure required by the commands is always the same, although `issue-labels` and `permissions` expect different values to be present. In the following the required structure is explained in detail:
