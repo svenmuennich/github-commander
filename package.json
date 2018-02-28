@@ -36,13 +36,13 @@
         "start": "node ."
     },
     "dependencies": {
+        "@octokit/rest": "^14.0.9",
         "chalk": "^2.1.0",
         "cli-spinner": "^0.2.6",
         "cli-table": "^0.3.1",
         "co": "^4.6.0",
         "co-prompt": "github:svenmuennich/co-prompt",
         "commander": "^2.11.0",
-        "github": "^11.0.0",
         "js-yaml": "^3.10.0",
         "mz": "^2.7.0"
     },
