@@ -36,7 +36,7 @@
         "start": "node ."
     },
     "dependencies": {
-        "@octokit/rest": "^14.0.9",
+        "@octokit/rest": "github:svenmuennich/rest.js",
         "chalk": "^2.1.0",
         "cli-spinner": "^0.2.6",
         "cli-table": "^0.3.1",
