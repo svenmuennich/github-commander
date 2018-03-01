@@ -21,7 +21,8 @@
     "issueLabels": [
         {
             "name": "bug",
-            "color": "ee0701"
+            "color": "ee0701",
+            "description": "Go catch it!"
         },
         {
             "name": "duplicate",

@@ -80,15 +80,16 @@ All commands (except for `generate-token`) work based on a configuration file th
 	- `WRITE`: The team can push changes and edit issues, PRs etc.
 	- `ADMIN`: The team has full admin rights on the repository, incl. adding new teams/collaborators and deleting the repository.
 
-* `issueLabels` – **required by `issue-labels`**: An array of issue label descriptions, e.g.:
+* `issueLabels` – **required by `issue-labels`**: An array of issue label definitions, e.g.:
 
     ```yaml
     issueLabels:
       - name: bug
+        description: Go catch it!
         color: ee0701
     ```
 
-    Both fields `name` (case insensitive) and `color` must be set. The color must be a valid, three to six character hex color code and is validated upon loading the config.
+    The fields `name` (case insensitive) and `color` must be set; `description` is optional. The color must be a valid, three to six character hex color code and is validated upon loading the config.
 
 * `repositories` – _optional_: An array of repository descriptions. These are used by the `permissions` command to apply custom permission settings for specific repositories. That is, you can set a specific permission for a team on a specific repository. These settings override the team's `defaultPermission` and can both downgrade and upgrade the team's permission on the repository. Furthermore you can overwrite the `--clear-collaborators` option for single repositories by setting `clearCollaborators` to `false`:
 

@@ -11,6 +11,7 @@ teams:
 issueLabels:
   - name: bug
     color: ee0701
+    description: Go catch it!
   - name: duplicate
     color: cccccc
   - name: enhancement
