@@ -24,6 +24,7 @@
         "github-commander-add-issues-to-project": "./lib/commands/addIssuesToProject.js",
         "github-commander-generate-token": "./lib/commands/generateToken.js",
         "github-commander-issue-labels": "./lib/commands/issueLabels.js",
+        "github-commander-move-column-to-project": "./lib/commands/moveColumnToProject.js",
         "github-commander-permissions": "./lib/commands/permissions.js"
     },
     "directories": {

@@ -60,6 +60,14 @@ Loads all open issues of the specified repository and appends them to the column
 
 Issues having the same labels are sorted in ascending order by their number, i.e. oldest first.
 
+### Move a project column to a different project
+
+**Note: This command does not require a configuration file.**
+
+`github-commander move-column-to-project -o <org_name> -s <source_project_name> -d <destination_project_name> -c <column_name>`
+
+Moves a column including all its cards from the specified source project to the specified destination project. If a column with the same name already exists in the destination project, it can only be used if it is still empty. If no such column exists, a new one with the same name will be created.
+
 ## Config format
 
 All commands (except for `generate-token`) work based on a configuration file that must be passed to the command. That file's format can be either `json` or `yaml`. The config structure required by the commands is always the same, although `issue-labels` and `permissions` expect different values to be present. In the following the required structure is explained in detail:
