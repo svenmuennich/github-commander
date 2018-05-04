@@ -26,6 +26,16 @@ issueLabels:
     color: cc317c
   - name: wontfix
     color: ffffff
+repositorySettings:
+  protectedBranches:
+    - name: master
+      requireReviews:
+        dismissApprovalWhenChanged: true
+        requireCodeOwnerReview: true
+      requireStatusChecks:
+        statusChecks:
+          - 'continuous-integration/travis-ci'
+        requireBranchUpToDate: true
 repositories:
   - name: upgraded-sniffle
     teamPermissions:
@@ -35,3 +45,14 @@ repositories:
         permission: null
   - name: shiny-pancake
     clearCollaborators: false
+  - name: tiny-eagle
+    settings:
+      protectedBranches:
+        - name: master
+          requireReviews:
+            dismissApprovalWhenChanged: true
+            requireCodeOwnerReview: true
+          requireStatusChecks:
+            statusChecks:
+              - 'continuous-integration/travis-ci'
+            requireBranchUpToDate: true

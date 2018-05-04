@@ -25,7 +25,8 @@
         "github-commander-generate-token": "./lib/commands/generateToken.js",
         "github-commander-issue-labels": "./lib/commands/issueLabels.js",
         "github-commander-move-column-to-project": "./lib/commands/moveColumnToProject.js",
-        "github-commander-permissions": "./lib/commands/permissions.js"
+        "github-commander-permissions": "./lib/commands/permissions.js",
+        "github-commander-repository-settings": "./lib/commands/repositorySettings.js"
     },
     "directories": {
         "lib": "./lib"

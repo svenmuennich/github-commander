@@ -11,4 +11,5 @@ program
     .command('issue-labels', 'Unifies the issue labels of all repositories based on a config file.')
     .command('move-column-to-project', 'Moves a project column incl. all its cards to a different project.')
     .command('permissions', 'Organizes the team permissions on repositories based on a config file.')
+    .command('repository-settings', 'Updates (some) settings of all (or some) repositories based on a config file.')
     .parse(process.argv);
