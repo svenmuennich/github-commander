@@ -76,6 +76,12 @@ Moves a column including all its cards from the specified source project to the 
 
 Reads the `repositorySettings` and `repositories` sections of your configuration and updates the settings of all repositories in the selected organization accordingly. If the optional `repositorySettings` element does not exist, only settings of `repositories` elements having `settings` element are changed. That said, if both repository specific `settings` and the _global_ `repositorySettings` exist, the repository specific settings take precedence of the global settings and they are not merged.
 
+### Add issue templates to all repositories
+
+`github-commander issue-templates <path_to_config_file>`
+
+Reads the `issueTemplates` section of your configuration and updates the issue templates of all private, non-archived repositories in the selected organization accordingly. That is, any new templates are added, existing templates (matching names) are updated and removed templates are deleted by separate commits for each template.
+
 ## Config format
 
 All commands (except for `generate-token`) work based on a configuration file that must be passed to the command. That file's format can be either `json` or `yaml`. The config structure required by the commands is always the same, although `issue-labels` and `permissions` expect different values to be present. In the following the required structure is explained in detail:
@@ -106,6 +112,17 @@ All commands (except for `generate-token`) work based on a configuration file th
     ```
 
     The fields `name` (case insensitive) and `color` must be set; `description` is optional. The color must be a valid, three to six character hex color code and is validated upon loading the config.
+
+* `issueTemplates` – **required by `issue-templates`**: An array of issue template definitions, e.g.:
+
+    ```yaml
+    issueTemplates:
+      - name: Bug report
+        description: Use this template when describing a bug.
+        templateFile: './issue-templates/Bug_report.md'
+    ```
+
+    All fields must be set; `name` and `description` must both be strings with at least 3 characters and at most 200 characters. The `templateFile` must be a path relative to the location of the configuration file.
 
 * `repositorySettings` – _optional_: Currently only supports configuring protected branches, with some if its options (the example should be self explanatory):
 
