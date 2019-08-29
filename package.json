@@ -39,7 +39,7 @@
         "start": "node ."
     },
     "dependencies": {
-        "@octokit/rest": "^15.9.4",
+        "@octokit/rest": "^16.28.7",
         "bottleneck": "^2.6.0",
         "chalk": "^2.1.0",
         "cli-spinner": "^0.2.6",
