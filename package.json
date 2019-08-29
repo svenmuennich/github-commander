@@ -54,7 +54,7 @@
         "viison-style-guide": "git+https://github.com/VIISON/style-guide.git"
     },
     "engines": {
-        "node": "^7.6.0"
+        "node": "^10.15.3"
     },
     "preferGlobal": true
 }
