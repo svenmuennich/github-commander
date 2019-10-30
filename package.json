@@ -1,6 +1,6 @@
 {
     "name": "github-commander",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "description": "A CLI tool for performing tedious GitHub settings with a keystroke",
     "keywords": [
         "GitHub",
