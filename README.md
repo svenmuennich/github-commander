@@ -82,6 +82,20 @@ Reads the `repositorySettings` and `repositories` sections of your configuration
 
 Reads the `issueTemplates` section of your configuration and updates the issue templates of all private, non-archived repositories in the selected organization accordingly. That is, any new templates are added, existing templates (matching names) are updated and removed templates are deleted by separate commits for each template.
 
+### Update the contents of mutliple repositories at once
+
+**Note: This command does not require a configuration file.**
+
+`github-commander bulk-update-repositories -o <org_name> -b <target_branch_name> -m <commit_message> <path_to_script>`
+
+Runs the passed script on a checkout of the default branch of all non-archived repositories the authenticated user has push access to. If running the script results in any changes, they will be committed to the passed target branch using the given message and pushed to remote.
+
+To filter the repositories the script will be run for you can pass a regular expression the repository name will be matched against:
+
+`--name-filter <repository_name_filter_regex>`
+
+The command has support for passing a `--dry-run` argument to perform all work as normal but skip pushing the branch to remote, which is useful for testing.
+
 ## Config format
 
 All commands (except for `generate-token`) work based on a configuration file that must be passed to the command. That file's format can be either `json` or `yaml`. The config structure required by the commands is always the same, although `issue-labels` and `permissions` expect different values to be present. In the following the required structure is explained in detail:
