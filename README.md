@@ -31,7 +31,7 @@ If you don't have such a token yet, you can use this command to generate a new o
 
 `github-commander issue-labels <path_to_config_file>`
 
-Reads the `issueLabels` section of your configuration and applies it to all repositories in the selected organization. This includes
+Reads the top-level `issueLabels` section as well as `issueLabels` and `additionalIssueLabels` repository sections of your configuration and applies it to all repositories in the selected organization. This includes
 
 * adding any new labels defined in the config,
 * updating the colors of existing labels (matched by name, case insensitive) and
@@ -185,6 +185,8 @@ All commands (except for `generate-token`) work based on a configuration file th
         * requiring the PR branch to be up to date with `master` when merging.
 
     Please note that the `teamPermissions` **do not** describe exclusive permissions. That is, if you have several teams and define only one of those teams in `teamPermissions`, all other teams still receive their default permissions for that repository.
+
+    You can also configure custom issue labels per repository, **either** by setting `issueLabels` and overriding the issue label list configured for the team **or** by configuring `additionalIssueLabels` to add labels in addition to the ones configured for the team. The format for each issue label is the same as for issue labels configurations on team level.
 
 You can find example configurations both as [yaml](config.yaml.dist) and as [json](config.json.dist) in this repository.
 
