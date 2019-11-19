@@ -80,7 +80,15 @@ Reads the `repositorySettings` and `repositories` sections of your configuration
 
 `github-commander issue-templates <path_to_config_file>`
 
-Reads the `issueTemplates` section of your configuration and updates the issue templates of all private, non-archived repositories in the selected organization accordingly. That is, any new templates are added, existing templates (matching names) are updated and removed templates are deleted by separate commits for each template.
+Reads the `issueTemplates` section of your configuration and updates the issue templates of all repositories in the selected organization that match the following criteria:
+
+* visibility is `private`
+* repository is not archived
+* repository is no fork
+
+Non-archived, public repositories (exlcuding forks) can be included in the update by passing the option `--include-public-repos`.
+
+When a valid repositories is updated, any new templates are added, existing templates (matched by name) are updated and removed templates are deleted by separate commits for each template.
 
 ### Update the contents of mutliple repositories at once
 
