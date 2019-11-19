@@ -188,6 +188,8 @@ All commands (except for `generate-token`) work based on a configuration file th
 
     You can also configure custom issue labels per repository, **either** by setting `issueLabels` and overriding the issue label list configured for the team **or** by configuring `additionalIssueLabels` to add labels in addition to the ones configured for the team. The format for each issue label is the same as for issue labels configurations on team level.
 
+    Issue templates can also be configured per repository by setting `issueTemplates` using the same format as for the global `issueTemplates` config. When configuring issue templates for a repository these override the global templates.
+
 You can find example configurations both as [yaml](config.yaml.dist) and as [json](config.json.dist) in this repository.
 
 ## License
