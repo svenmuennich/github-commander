@@ -76,11 +76,11 @@ Moves a column including all its cards from the specified source project to the 
 
 Reads the `repositorySettings` and `repositories` sections of your configuration and updates the settings of all repositories in the selected organization accordingly. If the optional `repositorySettings` element does not exist, only settings of `repositories` elements having `settings` element are changed. That said, if both repository specific `settings` and the _global_ `repositorySettings` exist, the repository specific settings take precedence of the global settings and they are not merged.
 
-### Add issue templates to all repositories
+### Add issue and pull request templates to all repositories
 
 `github-commander issue-templates <path_to_config_file>`
 
-Reads the `issueTemplates` section of your configuration and updates the issue templates of all repositories in the selected organization that match the following criteria:
+Reads the `issueTemplates` and `pullRequestTemplate` sections of your configuration and updates the issue and pull request templates, respectively, of all repositories in the selected organization that match the following criteria:
 
 * visibility is `private`
 * repository is not archived
@@ -146,6 +146,15 @@ All commands (except for `generate-token`) work based on a configuration file th
 
     All fields must be set; `name` and `description` must both be strings with at least 3 characters and at most 200 characters. The `templateFile` must be a path relative to the location of the configuration file.
 
+* `pullRequestTemplate` - _optional_: A simplified template definition, e.g.:
+
+    ```yml
+    pullRequestTemplate:
+      templateFile: './pull-request-templates/default.md'
+    ```
+
+    The `templateFile` must be a path relative to the location of the configuration file.
+
 * `repositorySettings` – _optional_: Currently only supports configuring protected branches, with some if its options (the example should be self explanatory):
 
     ```yaml
@@ -196,7 +205,7 @@ All commands (except for `generate-token`) work based on a configuration file th
 
     You can also configure custom issue labels per repository, **either** by setting `issueLabels` and overriding the issue label list configured for the team **or** by configuring `additionalIssueLabels` to add labels in addition to the ones configured for the team. The format for each issue label is the same as for issue labels configurations on team level.
 
-    Issue templates can also be configured per repository by setting `issueTemplates` using the same format as for the global `issueTemplates` config. When configuring issue templates for a repository these override the global templates.
+    Issue and pull request templates can also be configured per repository by setting `issueTemplates` and `pullRequestTemplate` using the same format as for the global `issueTemplates` and `pullRequestTemplate` config, respectively. When configuring templates for a repository these take precedence over the global templates.
 
 You can find example configurations both as [yaml](config.yaml.dist) and as [json](config.json.dist) in this repository.
 
