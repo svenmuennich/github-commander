@@ -39,5 +39,5 @@ build/Release
 .editorconfig
 .eslintrc.js
 
-# CI files
-.travis.yml
+# GitHub files
+.github
