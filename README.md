@@ -16,17 +16,6 @@ Clone this repository and install it using `npm install && npm link`.
 
 ## Usage
 
-### Generate a new OAuth token for the GitHub API
-
-`github-commander generate-token`
-
-For all other commands to work you need a GitHub OAuth token with the following [scopes](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/about-scopes-for-oauth-apps/):
-
-* `admin:org`
-* `repo`
-
-If you don't have such a token yet, you can use this command to generate a new one. After it is generated you are asked to optionally store it in a `.github-commander.token` file your home directory. If such a file is present when running one of the other commands, its token is loaded automatically.
-
 ### Unify issue labels across all repositories
 
 `github-commander issue-labels <path_to_config_file>`
@@ -106,7 +95,7 @@ The command has support for passing a `--dry-run` argument to perform all work a
 
 ## Config format
 
-All commands (except for `generate-token`) work based on a configuration file that must be passed to the command. That file's format can be either `json` or `yaml`. The config structure required by the commands is always the same, although `issue-labels` and `permissions` expect different values to be present. In the following the required structure is explained in detail:
+Some commands work based on a configuration file that must be passed to the command. That file's format can be either `json` or `yaml`. The config structure required by the commands is always the same, although `issue-labels` and `permissions` expect different values to be present. In the following the required structure is explained in detail:
 
 * `orgName` – **required**: The name of the GitHub organization you would like to _command_.
 * `teams` – **required by `permissions`**: An array of teams in the selected organization, e.g.:
