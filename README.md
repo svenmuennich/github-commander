@@ -28,7 +28,7 @@ Reads the top-level `issueLabels` section as well as `issueLabels` and `addition
 
 ### Unify team permissions across all repositories
 
-`github-commander permissions <path_to_config_file>`
+`github-commander repository-permissions <path_to_config_file>`
 
 Reads the `teams` and `repositories` sections of your configuration and updates the team permissions of all repositories in the selected organization accordingly. Only permissions of teams defined in the config are changed. That is, the permissions of any teams that are not added to the configuration are not touched. This allows to keep manual control over specific teams.
 
