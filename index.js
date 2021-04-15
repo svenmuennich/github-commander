@@ -13,4 +13,5 @@ program
     .command('move-column-to-project', 'Moves a project column incl. all its cards to a different project.')
     .command('repository-permissions', 'Organizes the team permissions on repositories based on a config file.')
     .command('repository-settings', 'Updates (some) settings of all (or some) repositories based on a config file.')
+    .command('transfer-open-issues', 'Transfers all open issues of a repository to another repository.')
     .parse(process.argv);

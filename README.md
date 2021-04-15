@@ -93,6 +93,16 @@ To filter the repositories the script will be run for you can pass a regular exp
 
 The command has support for passing a `--dry-run` argument to perform all work as normal but skip pushing the branch to remote, which is useful for testing.
 
+### Transfer all open issues from one repository to another
+
+`github-commander transfer-open-issues -o <org_name> -s <source_repository_name> -d <destination_repository_name>`
+
+Transfers all issues in status `open` from the given source repository to the given destination repository.
+
+While metadata like assignees and projects are automatically transferred by GitHub, labels are not, since the available labels might differ between the two repositories. In that case, the command will prompt you to confirm the transfer.
+
+In order to transfer as many labels as possible to the new issue, all labels set in the original issue that also exist in the destination repository (matched by name) are set.
+
 ## Config format
 
 Some commands work based on a configuration file that must be passed to the command. That file's format can be either `json` or `yaml`. The config structure required by the commands is always the same, although `issue-labels` and `permissions` expect different values to be present. In the following the required structure is explained in detail:

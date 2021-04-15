@@ -27,7 +27,8 @@
         "github-commander-issue-templates": "./lib/commands/issueTemplates.js",
         "github-commander-move-column-to-project": "./lib/commands/moveColumnToProject.js",
         "github-commander-repository-permissions": "./lib/commands/repositoryPermissions.js",
-        "github-commander-repository-settings": "./lib/commands/repositorySettings.js"
+        "github-commander-repository-settings": "./lib/commands/repositorySettings.js",
+        "github-commander-transfer-open-issues": "./lib/commands/transferOpenIssues.js"
     },
     "directories": {
         "lib": "./lib"
@@ -50,7 +51,8 @@
         "js-yaml": "^4.0.0",
         "mz": "^2.7.0",
         "octokit": "^1.0.1",
-        "simple-git": "^2.37.0"
+        "simple-git": "^2.37.0",
+        "uuid": "^8.3.2"
     },
     "devDependencies": {
         "viison-style-guide": "git+https://github.com/pickware/style-guide.git"
